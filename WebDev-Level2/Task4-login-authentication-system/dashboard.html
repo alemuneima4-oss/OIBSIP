@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Authentication System</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/auth.js" defer></script>
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+        <h2>My Dashboard</h2>
+        <button id="logout-btn" class="logout-button" type="button">
+            Logout
+        </button>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="welcome-card">
+            <h1>Welcome, <span id="user-name"></span>!</h1>
+
+            <p>You have successfully logged in.</p>
+
+            <p>
+                This is a protected page. Only logged-in users
+                can access it.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>

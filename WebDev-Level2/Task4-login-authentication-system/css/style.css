@@ -1,0 +1,574 @@
+
+/* ==========================================
+   TASK 4 - LOGIN AUTHENTICATION SYSTEM
+   Emerald Green Modern Design
+========================================== */
+
+/* 1. COLOR VARIABLES */
+:root {
+    --primary: #059669;
+    --primary-dark: #047857;
+    --primary-deep: #064E3B;
+    --primary-light: #D1FAE5;
+
+    --background: #F0FDF4;
+    --white: #FFFFFF;
+
+    --text: #1F2937;
+    --muted: #64748B;
+
+    --border: #E2E8F0;
+    --input-background: #F8FAFC;
+
+    --success: #047857;
+    --success-background: #ECFDF5;
+
+    --error: #DC2626;
+    --error-background: #FEF2F2;
+
+    --shadow: 0 20px 60px rgba(6, 78, 59, 0.12);
+}
+
+/* 2. RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. BODY */
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(circle at 10% 15%, #D1FAE5 0, transparent 35%),
+        radial-gradient(circle at 90% 85%, #A7F3D0 0, transparent 35%),
+        #F0FDF4;
+}
+
+/* 4. OUTER AUTH CONTAINER */
+.auth-container {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+/* 5. ACTUAL LOGIN CARD */
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+
+    background-color: var(--white);
+
+    padding: 45px 40px;
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(5, 150, 105, 0.10);
+
+    box-shadow: var(--shadow);
+
+    position: relative;
+    overflow: hidden;
+
+    animation: cardAppear 0.5s ease;
+}
+
+/* Decorative green top line */
+.auth-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #047857,
+        #10B981,
+        #6EE7B7
+    );
+}
+
+/* 6. CARD ANIMATION */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 7. HEADING */
+.auth-card h1 {
+    color: var(--primary-deep);
+
+    font-size: 30px;
+    font-weight: 750;
+
+    letter-spacing: -0.8px;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+}
+
+/* 8. SUBTITLE */
+.subtitle {
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+/* 9. FORM */
+#login-form {
+    width: 100%;
+}
+
+/* 10. FORM GROUP */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    color: var(--primary-deep);
+
+    font-size: 13px;
+    font-weight: 650;
+
+    margin-bottom: 9px;
+}
+
+/* 11. INPUT FIELDS */
+.form-group input {
+    display: block;
+
+    width: 100%;
+    height: 50px;
+
+    padding: 0 15px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    color: var(--text);
+
+    background-color: var(--input-background);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.form-group input::placeholder {
+    color: #94A3B8;
+}
+
+.form-group input:hover {
+    border-color: #A7F3D0;
+}
+
+.form-group input:focus {
+    background-color: var(--white);
+
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.12);
+}
+
+/* 12. MESSAGE */
+.message {
+    font-size: 13px;
+    line-height: 1.5;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    padding: 0;
+}
+
+.message:empty {
+    display: none;
+}
+
+.message.success {
+    color: var(--success);
+
+    background-color: var(--success-background);
+
+    border: 1px solid #A7F3D0;
+
+    padding: 11px;
+
+    border-radius: 9px;
+}
+
+.message.error {
+    color: var(--error);
+
+    background-color: var(--error-background);
+
+    border: 1px solid #FECACA;
+
+    padding: 11px;
+
+    border-radius: 9px;
+}
+
+/* 13. LOGIN BUTTON */
+.auth-button {
+    display: block;
+
+    width: 100%;
+    min-height: 50px;
+
+    padding: 13px 18px;
+
+    color: var(--white);
+
+    background: linear-gradient(
+        135deg,
+        #059669,
+        #047857
+    );
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 650;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.20);
+
+    transition: all 0.25s ease;
+}
+
+.auth-button:hover {
+    background: linear-gradient(
+        135deg,
+        #047857,
+        #065F46
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+/* 14. REGISTER / LOGIN LINK */
+.auth-link {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    text-align: center;
+
+    margin-top: 27px;
+}
+
+.auth-link a {
+    color: var(--primary-dark);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 3px;
+
+    transition: color 0.2s ease;
+}
+
+.auth-link a:hover {
+    color: #10B981;
+
+    text-decoration: underline;
+}
+
+/* 15. ACCESSIBILITY */
+.auth-button:focus-visible,
+.auth-link a:focus-visible {
+    outline: 3px solid #6EE7B7;
+    outline-offset: 3px;
+}
+
+/* 16. RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 20px 15px;
+    }
+
+    .auth-card {
+        padding: 38px 25px;
+
+        border-radius: 18px;
+    }
+
+    .auth-card h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        margin-bottom: 27px;
+    }
+
+    .form-group input {
+        height: 47px;
+    }
+}
+
+/* 17. REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ==========================================
+   TASK 4 - DASHBOARD DESIGN
+========================================== */
+
+/* Dashboard page background */
+body:has(.dashboard-container) {
+    display: block;
+    min-height: 100vh;
+    padding: 0;
+
+    background:
+        radial-gradient(circle at top right, #D1FAE5, transparent 35%),
+        #F0FDF4;
+}
+
+/* Dashboard header */
+.dashboard-header {
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 7%;
+
+    background: #FFFFFF;
+
+    border-bottom: 1px solid #D1FAE5;
+
+    box-shadow: 0 3px 15px rgba(6, 78, 59, 0.05);
+}
+
+.dashboard-header h2 {
+    color: #064E3B;
+
+    font-size: 21px;
+    font-weight: 750;
+
+    letter-spacing: -0.4px;
+}
+
+/* Logout button */
+.logout-button {
+    width: auto;
+    min-width: 105px;
+
+    padding: 11px 22px;
+
+    background: #059669;
+
+    color: #FFFFFF;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    border: none;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(5, 150, 105, 0.15);
+
+    transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #047857;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(5, 150, 105, 0.22);
+}
+
+/* Dashboard main area */
+.dashboard-container {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 90px 25px;
+}
+
+/* Welcome card */
+.welcome-card {
+    width: 100%;
+    max-width: 650px;
+
+    background: #FFFFFF;
+
+    padding: 55px 45px;
+
+    border: 1px solid #D1FAE5;
+
+    border-radius: 22px;
+
+    box-shadow: 0 20px 50px rgba(6, 78, 59, 0.10);
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    animation: cardAppear 0.5s ease;
+}
+
+/* Green decorative top line */
+.welcome-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #047857,
+        #10B981,
+        #6EE7B7
+    );
+}
+
+/* Welcome heading */
+.welcome-card h1 {
+    color: #064E3B;
+
+    font-size: 32px;
+    font-weight: 750;
+
+    letter-spacing: -0.8px;
+
+    margin-bottom: 18px;
+}
+
+/* Username */
+#user-name {
+    color: #059669;
+}
+
+/* Welcome description */
+.welcome-card p {
+    color: #64748B;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+/* First message */
+.welcome-card p:first-of-type {
+    color: #047857;
+
+    font-weight: 650;
+
+    margin-bottom: 15px;
+}
+
+/* Last message */
+.welcome-card p:last-of-type {
+    background: #ECFDF5;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    border: 1px solid #D1FAE5;
+
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+/* Dashboard responsive design */
+@media (max-width: 600px) {
+
+    .dashboard-header {
+        min-height: 70px;
+        padding: 14px 20px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 18px;
+    }
+
+    .logout-button {
+        min-width: 85px;
+        padding: 10px 15px;
+    }
+
+    .dashboard-container {
+        min-height: calc(100vh - 70px);
+        padding: 55px 18px;
+    }
+
+    .welcome-card {
+        padding: 42px 24px;
+        border-radius: 17px;
+    }
+
+    .welcome-card h1 {
+        font-size: 25px;
+    }
+
+    .welcome-card p {
+        font-size: 14px;
+    }
+}

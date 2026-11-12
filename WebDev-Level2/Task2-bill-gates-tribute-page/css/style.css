@@ -1,0 +1,629 @@
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* ==============================
+   1. THEME VARIABLES
+================================= */
+
+:root {
+    --bg-color: #f5f7fa;
+    --surface-color: #ffffff;
+    --text-color: #0f172a;
+    --secondary-text: #64748b;
+    --border-color: #e2e8f0;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --shadow-color: rgba(15, 23, 42, 0.08);
+}
+
+body.dark-mode {
+    --bg-color: #111827;
+    --surface-color: #1e293b;
+    --text-color: #f1f5f9;
+    --secondary-text: #cbd5e1;
+    --border-color: #334155;
+    --accent-color: #60a5fa;
+    --accent-hover: #3b82f6;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==============================
+   2. GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* ==============================
+   3. HEADER AND NAVIGATION
+================================= */
+
+.header {
+    width: 100%;
+    background-color: var(--surface-color);
+    padding: 18px 8%;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--border-color);
+}
+
+#theme-toggle i {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* ==============================
+   4. HERO SECTION
+================================= */
+
+.hero {
+    min-height: 85vh;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    background-color: var(--bg-color);
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-label {
+    color: var(--accent-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(55px, 7vw, 85px);
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: var(--accent-color);
+}
+
+.hero-content h2 {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 520px;
+    line-height: 1.8;
+    color: var(--secondary-text);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 430px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+
+/* ==============================
+   5. BIOGRAPHY SECTION
+================================= */
+
+.biography {
+    padding: 90px 8%;
+    background-color: var(--surface-color);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-label {
+    color: var(--accent-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.section-heading h2 span {
+    color: var(--accent-color);
+}
+
+.section-heading > p:last-child {
+    color: var(--secondary-text);
+    font-size: 16px;
+}
+
+.biography-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.biography-content p {
+    color: var(--secondary-text);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+
+/* ==============================
+   6. ACHIEVEMENTS SECTION
+================================= */
+
+.achievements {
+    padding: 90px 8%;
+    background-color: var(--bg-color);
+}
+
+.timeline {
+    max-width: 850px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 85px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--accent-color);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.timeline-year {
+    min-width: 85px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-color);
+    padding-top: 20px;
+}
+
+.timeline-content {
+    flex: 1;
+    background-color: var(--surface-color);
+    padding: 22px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    border-left: 3px solid var(--accent-color);
+}
+
+.timeline-content h3 {
+    font-size: 19px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: var(--secondary-text);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+
+/* ==============================
+   7. QUOTE SECTION
+================================= */
+
+.quotes {
+    padding: 100px 8%;
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: center;
+}
+
+.quote-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.quote-label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    color: #3b82f6;
+    height: 75px;
+}
+
+.quote-container blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.quote-author {
+    color: #93c5fd;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   8. FOOTER
+================================= */
+
+.footer {
+    background-color: var(--surface-color);
+    padding: 60px 8% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand p {
+    color: var(--secondary-text);
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h3 {
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+
+/* ==============================
+   9. RESPONSIVE DESIGN
+================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .hero {
+        padding: 60px 5%;
+        gap: 35px;
+    }
+
+    .hero-image img {
+        height: 420px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+}
+
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+    padding-top: 10px;
+}
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
+        gap: 40px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+        height: 400px;
+    }
+
+    .biography,
+    .achievements {
+        padding: 65px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .biography-content p {
+        text-align: left;
+    }
+
+    .timeline::before {
+        left: 65px;
+    }
+
+    .timeline-item {
+        gap: 18px;
+    }
+
+    .timeline-year {
+        min-width: 65px;
+        font-size: 16px;
+    }
+
+    .timeline-content {
+        padding: 18px;
+    }
+
+    .quotes {
+        padding: 70px 6%;
+    }
+
+    .footer {
+        padding: 45px 6% 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero-content h2 {
+        font-size: 21px;
+    }
+
+    .hero-image img {
+        height: 330px;
+    }
+
+    .timeline::before {
+        left: 55px;
+    }
+
+    .timeline-item {
+        gap: 12px;
+    }
+
+    .timeline-year {
+        min-width: 55px;
+        font-size: 14px;
+    }
+
+    .timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .timeline-content p {
+        font-size: 14px;
+    }
+
+    .quote-container blockquote {
+        font-size: 23px;
+    }
+}
+
+/* Scroll Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-4px);
+}
+
+#back-to-top i {
+    width: 20px;
+    height: 20px;
+}
